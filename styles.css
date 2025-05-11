@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+/* Shared styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary */
+    --dark-blue: hsl(233, 47%, 7%);
+    --desaturated-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--dark-blue);
+}
+
+main, .hero {
+    width: 525px;
+    height: 400px;
+}
+
+/* Main section styles */
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 3.5rem;
+    border-radius: 8px 0 0 8px;
+    background-color: var(--desaturated-blue);
+}
+
+h2 {
+    font-family: "Inter";
+    font-size: 2.25rem;
+    color: white;
+}
+
+h2 span {
+    color: var(--soft-violet);
+}
+
+.description {
+    width: 80%;
+    margin-top: 24px;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 175%;
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: auto;
+}
+
+.stat {
+    font-family: "Lexend Deca";
+    font-size: 10px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 200%;
+    color: hsla(0, 0%, 100%, 0.6);
+}
+
+.stat span {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+/* Hero styles */
+.hero {
+    background:
+        linear-gradient(hsla(277, 64%, 61%, .6), hsla(277, 64%, 61%, .6)),
+        url("./images/image-header-desktop.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0 8px 8px 0;
+}
+
+.mobile {
+    display: none;
+}
+
+/* Responsive hero */
+@media screen and (max-width: 1050px) {
+    .desktop {
+        display: none;
+    } 
+
+    .mobile {
+        display: block;
+        background:
+            linear-gradient(hsla(277, 64%, 61%, .6), hsla(277, 64%, 61%, .6)),
+            url("./images/image-header-mobile.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Responsive layout */
+@media screen and (max-width: 1050px) {
+    body {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        min-height: 100vh;
+        padding: 3rem 0;
+    }
+
+    .hero, main {
+        width: 450px;
+    }
+
+    .hero {
+        height: 250px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    main {
+        align-items: center;
+        height: 375px;
+        padding: 2.5rem 2rem;
+        border-radius: 0 0 8px 8px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hero, main {
+        width: 90vw;
+    }
+
+    main {
+        height: fit-content;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .stat {
+        font-size: 12px;
+        margin-top: 30px;
+    }
+
+    .stat span {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .content {
+        padding: 1.5rem;
+    }
+
+    h2, .description {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+}
